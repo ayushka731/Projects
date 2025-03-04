@@ -1,0 +1,1 @@
+INSERT INTO product (categoryid,productname,productprice,productquantity,productimage,displayorder,status,special) VALUES (6,'samsung projector',1300,210, 'proimages/sampro.jpg',2,'on',1);
