@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .b1, .b2, .b3, .b4 {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      background-color: black;
+      margin: 5px;
+    }
+  </style>
+  <script>
+    var i = 1;
+    $(function() {
+      $('.img1').css('display', 'block');
+      setInterval(show, 20000);
+      $('.nt').click(function() {
+        $('.img' + i).fadeOut(1000);
+        $('.b' + i).css('background-color', 'black');
+        i = i + 1;
+        if (i == 5) {
+          i = 1;
+        }
+        $('.img' + i).fadeIn(1000);
+        $('.b' + i).css('background-color', 'red');
+      });
+      $('.ps').click(function() {
+        $('.img' + i).fadeOut(1000);
+        $('.b' + i).css('background-color', 'black');
+        i = i - 1;
+        if (i == 0) {
+          i = 4;
+        }
+        $('.img' + i).fadeIn(1000);
+        $('.b' + i).css('background-color', 'red');
+      });
+    });
+
+    function show() {
+      $('.img' + i).fadeOut(1000);
+      $('.b' + i).css('background-color', 'black');
+      i = i + 1;
+      if (i == 5) {
+        i = 1;
+      }
+      $('.img' + i).fadeIn(1000);
+      $('.b' + i).css('background-color', 'red');
+    }
+  </script>
+</head>
+<body>
+  <div class="main1">
+    <img class="img1" src="download.jpg" style="display:none;">
+    <img class="img2" src="download1.jpg" style="display:none;">
+    <img class="img3" src="download2.jpg" style="display:none;">
+    <img class="img4" src="download3.jpg" style="display:none;">
+  </div>
+  <input type="button" value="Previous" class="ps">
+  <input type="button" value="Next" class="nt">
+  <div class="b1"></div>
+  <div class="b2"></div>
+  <div class="b3"></div>
+  <div class="b4"></div>
+</body>
+</html>
